@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -47,6 +48,9 @@ public class ProappController {
 
     @FXML
     private int count;
+
+    @FXML
+    private Button teacher;
 
     @FXML
     void initialize() {
@@ -299,7 +303,7 @@ public class ProappController {
             //読み込みファイルのインスタンス生成
             //ファイル名を指定する
             fi = new FileInputStream("data1.csv");
-            is = new InputStreamReader(fi,"UTF-8");
+            is = new InputStreamReader(fi, "UTF-8");
             br = new BufferedReader(is);
             //読み込み行
             String line;
@@ -318,7 +322,7 @@ public class ProappController {
                     String ASSETCODE = search2.getValue();
                     int a = ASSETCODE.length();
                     int b = data1[colno].length();
-                    if(b >= a) {
+                    if (b >= a) {
                         String XXXX = data1[colno].substring(0, a);
                         if (XXXX.equals(ASSETCODE)) {
                             data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
@@ -326,60 +330,60 @@ public class ProappController {
                         }
                     }
                 } else if (itemsXXX == "管理者") {
-                    if(itemsXX == "宇都木" && data1[colno2].equals("宇都木")){
+                    if (itemsXX == "宇都木" && data1[colno2].equals("宇都木")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "島川" && data1[colno2].equals("島川")) {
+                    } else if (itemsXX == "島川" && data1[colno2].equals("島川")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "宮田" && data1[colno2].equals("宮田")) {
+                    } else if (itemsXX == "宮田" && data1[colno2].equals("宮田")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "山野辺" && data1[colno2].equals("山野辺")) {
+                    } else if (itemsXX == "山野辺" && data1[colno2].equals("山野辺")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "佐藤" && data1[colno2].equals("佐藤")) {
+                    } else if (itemsXX == "佐藤" && data1[colno2].equals("佐藤")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "大島" && data1[colno2].equals("大島")) {
+                    } else if (itemsXX == "大島" && data1[colno2].equals("大島")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "川村" && data1[colno2].equals("川村")) {
+                    } else if (itemsXX == "川村" && data1[colno2].equals("川村")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "須志田" && data1[colno2].equals("須志田")) {
+                    } else if (itemsXX == "須志田" && data1[colno2].equals("須志田")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "内田" && data1[colno2].equals("内田")) {
+                    } else if (itemsXX == "内田" && data1[colno2].equals("内田")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
                     }
-                }else{
-                    if(itemsXX == "宇都木研" && data1[colno3].equals("宇都木研")){
+                } else {
+                    if (itemsXX == "宇都木研" && data1[colno3].equals("宇都木研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "島川研" && data1[colno3].equals("島川研")){
+                    } else if (itemsXX == "島川研" && data1[colno3].equals("島川研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "宮田研" && data1[colno3].equals("宮田研")){
+                    } else if (itemsXX == "宮田研" && data1[colno3].equals("宮田研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "山野辺研" && data1[colno3].equals("山野辺研")){
+                    } else if (itemsXX == "山野辺研" && data1[colno3].equals("山野辺研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "佐藤研" && data1[colno3].equals("佐藤研")){
+                    } else if (itemsXX == "佐藤研" && data1[colno3].equals("佐藤研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "大島研" && data1[colno3].equals("大島研")){
+                    } else if (itemsXX == "大島研" && data1[colno3].equals("大島研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "川村研" && data1[colno3].equals("川村研")){
+                    } else if (itemsXX == "川村研" && data1[colno3].equals("川村研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "須志田研" && data1[colno3].equals("須志田研")){
+                    } else if (itemsXX == "須志田研" && data1[colno3].equals("須志田研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
-                    }else if(itemsXX == "内田研" && data1[colno3].equals("内田研")){
+                    } else if (itemsXX == "内田研" && data1[colno3].equals("内田研")) {
                         data.addAll(new Data(data1[colno], data1[colno1], data1[colno2], data1[colno3], data1[colno4]));
                         counter.add(count);
                     }
@@ -394,5 +398,21 @@ public class ProappController {
                 e2.printStackTrace();
             }
         }
+    }
+
+    public void onteacher(ActionEvent e){
+        try{
+            showThirdWindow();
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+    void showThirdWindow() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("teacher.fxml"));
+        Pane root = (Pane) loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.showAndWait();
     }
 }
